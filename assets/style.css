@@ -2,3 +2,9 @@ h1 {
     text-align: center;
     border: 3px solid green;
   }
+
+  .container-fluid{
+    background-color: rgb(2, 2, 182);
+    font-size: 3rem;
+  }
+
