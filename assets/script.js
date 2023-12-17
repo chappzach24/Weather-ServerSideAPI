@@ -3,8 +3,6 @@ var city;
 
 let cityName = "Gahanna";
 
-//df43dac8214f8ed2c98fb6948c2f6dff
-
 // Function to save user input
 function saveInput() {
   // Get user input
