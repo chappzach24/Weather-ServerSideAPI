@@ -1,10 +1,46 @@
-h1 {
-    text-align: center;
-    border: 3px solid green;
-  }
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+}
 
-  .container-fluid{
-    background-color: rgb(2, 2, 182);
-    font-size: 3rem;
-  }
+#search-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
 
+#search-input {
+  width: 60%;
+  padding: 10px;
+  font-size: 16px;
+}
+
+#search-button {
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#weather-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#current-weather {
+  margin-bottom: 20px;
+}
+
+#forecast {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.forecast-day {
+  text-align: center;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+}
