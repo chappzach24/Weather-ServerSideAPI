@@ -2,6 +2,9 @@ body {
   font-family: Arial, sans-serif;
   margin: 20px;
 }
+ul{
+  list-style: none;
+}
 
 #search-container {
   display: flex;

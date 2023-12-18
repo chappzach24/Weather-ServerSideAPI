@@ -3,6 +3,7 @@ var city;
 
 let cityName = "Gahanna";
 
+
 // Function to save user input
 function saveInput() {
   // Get user input
@@ -69,3 +70,7 @@ fetch(apiUrl)
     // Handle any errors that occurred during the fetch
     console.error("Fetch error:", error);
   });
+
+  function ShowWeather(){
+    
+  }
