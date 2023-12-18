@@ -1,8 +1,9 @@
-var APIKey = "bb3db924a5328b1a5ee83d1241a27223";
-var city;
+var api = 'https://api.openweathermap.org/data/2.5/weather?q='
+let city = "Gahanna";
+var APIKey = "&appid=bb3db924a5328b1a5ee83d1241a27223";
+var units = "&units=imperial";
 
-let cityName = "Gahanna";
-
+var url = api + city + APIKey + units;
 
 // Function to save user input
 function saveInput() {
@@ -49,28 +50,9 @@ window.onload = function () {
   updateHistory();
 };
 
-const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityName},&appid=bb3db924a5328b1a5ee83d1241a27223`;
-
-// Use the fetch function to make a GET request to the API
-fetch(apiUrl)
-  .then((response) => {
-    // Check if the request was successful (status code 200)
-    if (!response.ok) {
-      throw new Error(`HTTP error! Status: ${response.status}`);
-    }
-
-    // Parse the JSON response
+fetch(url)
+  .then(function (response) {
     return response.json();
   })
-  .then((data) => {
-    // Do something with the data
-    console.log(data.list[0].weather);
-  })
-  .catch((error) => {
-    // Handle any errors that occurred during the fetch
-    console.error("Fetch error:", error);
-  });
+  
 
-  function ShowWeather(){
-    
-  }
