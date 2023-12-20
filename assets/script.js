@@ -27,6 +27,7 @@ function runData(y) {
   runForecast(y);
 }
 
+//fetch for current weather
 function runCurrent(x) {
   var url = api + "weather?q=" + x + APIKey + units;
 
@@ -42,11 +43,10 @@ function runCurrent(x) {
       let currentDay = data.main
       console.log(`current temp: ${currentDay.temp}, current wind: ${data.wind.speed}`);
 
-      saveToStorage(data.name)
-      // saveToStorage(data.)
+      weatherDOM(data);
     })
 }
-
+//fetch for 5 day forcast
 function runForecast(a) {
   var url = api + "forecast?q=" + a + APIKey + units;
 
@@ -67,7 +67,8 @@ function runForecast(a) {
         }
       }
       console.log(dayArray)
-      
+
+      forcastDOM(data);
     });
 }
 
@@ -96,6 +97,15 @@ function updateHistory() {
     li.textContent = item;
     historyList.appendChild(li);
   });
+}
+
+function weatherDOM(data){
+  document.getElementById
+
+}
+
+function forcastDOM(data){
+
 }
 
 updateHistory()

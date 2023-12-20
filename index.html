@@ -34,39 +34,28 @@
         <button id="submit" onclick="saveInput()">search</button>
         <h2>History</h2>
         <ul id="historyList"></ul>
-
       </section>
 
-      <section class="col-9">
-
-        <div class="card text-center mb-3 " >
-          <div class="card-body"> 
+      <section class="col-9" id="hidden">
+        <div class="card text-center mb-3">
+          <div class="card-body">
             <h5 class="card-title" id="citydate"></h5>
-            <p class="card-text">
-             placeholder for temp
-            </p>
-            <p class="card-text">
-              placeholder for wind
-             </p>
-             <p class="card-text">
-              placeholder for humidity
-             </p>
-             
+            <p class="card-text" id="currtemp"></p>
+            <p class="card-text" id="currwind"></p>
+            <p class="card-text" id="currhum"></p>
           </div>
         </div>
 
-        <div id="forecast"></div>
+        <!-- <div id="forecast"></div>
 
-  
         <div class="card text-center mb-3" style="width: 18rem">
           <div class="card-body">
             <h3 class="card-title">Day 1</h3>
             <h4 id="temp">Temp:</h4>
             <h4></h4>
           </div>
-        </div>
+        </div> -->
       </section>
-
     </main>
     <script src="./assets/script.js"></script>
   </body>
