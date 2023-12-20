@@ -13,57 +13,61 @@
     <title>Weather</title>
   </head>
   <body>
-    <main>
-      <nav class="navbar bg-body-tertiary">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">
-            <img
-              src="./assets/Photos/sun.webp"
-              alt="Sun"
-              width="30"
-              height="24"
-              class="d-inline-block align-text-top"
-            />
-            Weather forcast
-          </a>
+    <header class="navbar bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img
+            src="./assets/Photos/sun.webp"
+            alt="Sun"
+            width="30"
+            height="24"
+            class="d-inline-block align-text-top"
+          />
+          Weather forcast
+        </a>
+      </div>
+    </header>
+    <main class="row">
+      <section class="col-3">
+        <!-- <submit  for="userInput"></submit> -->
+        <input placeholder="Enter city" type="text" id="userInput" />
+        <button id="submit" onclick="saveInput()">search</button>
+        <h2>History</h2>
+        <ul id="historyList"></ul>
+
+      </section>
+
+      <section class="col-9">
+
+        <div class="card text-center mb-3 " >
+          <div class="card-body"> 
+            <h5 class="card-title" id="citydate"></h5>
+            <p class="card-text">
+             placeholder for temp
+            </p>
+            <p class="card-text">
+              placeholder for wind
+             </p>
+             <p class="card-text">
+              placeholder for humidity
+             </p>
+             
+          </div>
         </div>
-      </nav>
-      <!DOCTYPE html>
-      <html lang="en">
-        <header>
-          <meta charset="UTF-8" />
-          <title>Weather Dashboard</title>
-        </header>
-        <body>
-          <!-- <submit  for="userInput"></submit> -->
-          <input placeholder="Enter city" type="text" id="userInput" />
-          <button id="submit" onclick="saveInput()">search</button>
-          <h2>History</h2>
-          <ul id="historyList"></ul>
 
-          <div class="card text-center mb-3" style="width: 18rem">
-            <div class="card-body">
-              <h5 class="card-title">Todays Weather</h5>
-              <p class="card-text">
-                With supporting text below as a natural lead-in to additional
-                content.
-              </p>
-            </div>
+        <div id="forecast"></div>
+
+  
+        <div class="card text-center mb-3" style="width: 18rem">
+          <div class="card-body">
+            <h3 class="card-title">Day 1</h3>
+            <h4 id="temp">Temp:</h4>
+            <h4></h4>
           </div>
+        </div>
+      </section>
 
-          <div class="card text-center mb-3" style="width: 18rem">
-            <div class="card-body">
-              <h3 class="card-title">Day 1</h3>
-              <h4 id="temp">Temp: </h4>
-              <h4></h4>
-              
-            </div>
-          </div>
-
-         
-          <script src="./assets/script.js"></script>
-        </body>
-      </html>
     </main>
+    <script src="./assets/script.js"></script>
   </body>
 </html>
