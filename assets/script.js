@@ -17,7 +17,7 @@ function saveInput() {
   }
 
   runData(userInput);
-
+  saveToStorage(userInput)
   // Clear the input field
   document.getElementById("userInput").value = "";
 }
@@ -42,10 +42,11 @@ function runCurrent(x) {
       }
       let currentDay = data.main
       console.log(`current temp: ${currentDay.temp}, current wind: ${data.wind.speed}`);
-
+      console.log(data);
       weatherDOM(data);
     })
 }
+
 //fetch for 5 day forcast
 function runForecast(a) {
   var url = api + "forecast?q=" + a + APIKey + units;
@@ -100,7 +101,17 @@ function updateHistory() {
 }
 
 function weatherDOM(data){
-  document.getElementById
+  var currentIcon = document.getElementById("icon")
+  currentIcon = textContent = data.weather.icon;
+
+  var currentTemp = document.getElementById("temp1")
+  currentTemp.textContent = data.main.temp;
+
+  var currentWind = document.getElementById("wind1")
+  currentWind.textContent = data.wind.speed;
+
+  var currentHum = document.getElementById("humidity1")
+  currentHum.textContent = data.main.humidity;
 
 }
 
