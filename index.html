@@ -28,7 +28,9 @@
       </div>
     </header>
     <main class="row">
-      <section class="col-3">
+
+      <section class="col-9" id="hidden"></section>
+      <section class="col-9">
         <!-- <submit  for="userInput"></submit> -->
         <input placeholder="Enter city" type="text" id="userInput" />
         <button id="submit" onclick="saveInput()">search</button>
@@ -36,17 +38,20 @@
         <ul id="historyList"></ul>
       </section>
 
-      <section class="col-9" id="hidden">
+      <!-- Current Weather -->
+
+      
         <div class="card text-center mb-3">
-          <h4 class="card-title"><span id="date1"></span></h4>
-                  <p><span id="icon"></span></p>
-                  <p>Temp: <span id="temp1"></span> °F</p>
-                  <p>Wind: <span id="wind1"></span> mph</p>
-                  <p>Humidity: <span id="humidity1"></span>%</p>
-          </div>
+          <p class="card-title"><span id="state"></span></p>
+          <p><span id="currentTime"></span></p>
+          <img src="" id="weatherIcon" alt="">
+          <!-- <p><span id="icon"></span></p> -->
+          <p>Temp: <span id="temp1"></span> °F</p>
+          <p>Wind: <span id="wind1"></span> mph</p>
+          <p>Humidity: <span id="humidity1"></span>%</p>
         </div>
 
-<!-- forcast -->
+        <!-- forcast -->
 
         <div class="card-group">
           <div class="card">
@@ -57,7 +62,7 @@
               <p class="card-text">Humidity: <span id="humidity2"></span>%</p>
             </div>
           </div>
-          
+
           <div class="card">
             <div class="card-body">
               <h5 class="card-title"><span id="day3"></span></h5>
@@ -94,9 +99,11 @@
             </div>
           </div>
         </div>
-        
       </section>
+
     </main>
+
     <script src="./assets/script.js"></script>
+  
   </body>
 </html>

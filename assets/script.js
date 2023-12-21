@@ -4,13 +4,18 @@ var api = "https://api.openweathermap.org/data/2.5/";
 var APIKey = "&appid=bb3db924a5328b1a5ee83d1241a27223";
 var units = "&units=imperial";
 var historyArr =  JSON.parse(localStorage.getItem("inputHistory")) || [];
+var weatherIcon = document.getElementById("weatherIcon")
+var userInput;
 
+const now = new Date();
+const currentDateTime = now.toLocaleString();
 
+console.log(currentDateTime); // output: "7/20/2021, 2:28:15 PM" (will vary depending on your time zone)
 
 // Function to save user input
 function saveInput() {
   // Get user input
-  var userInput = document.getElementById("userInput").value;
+  userInput = document.getElementById("userInput").value;
 
   if(userInput === ''){
     return
@@ -43,7 +48,7 @@ function runCurrent(x) {
       let currentDay = data.main
       console.log(`current temp: ${currentDay.temp}, current wind: ${data.wind.speed}`);
       console.log(data);
-      weatherDOM(data);
+      weatherDOM(data, userInput, currentDateTime);
     })
 }
 
@@ -67,9 +72,9 @@ function runForecast(a) {
           dayArray.push(hour)
         }
       }
-      console.log(dayArray)
-
-      forcastDOM(data);
+      console.log(dayArray);
+      forcastDOM(dayArray);
+      // forcastDOM(data);
     });
 }
 
@@ -100,9 +105,17 @@ function updateHistory() {
   });
 }
 
-function weatherDOM(data){
-  var currentIcon = document.getElementById("icon")
-  currentIcon = textContent = data.weather.icon;
+function weatherDOM(data, userInput, currentDateTime){
+  var currentTime = document.getElementById("currentTime")
+  currentTime.textContent = currentDateTime;
+
+  var iconUrl = `https://openweathermap.org/img/w/${data.weather[0].icon}.png`;
+
+  var currentstate = document.getElementById("state")
+  currentstate.textContent = userInput;
+
+  weatherIcon.setAttribute("src", iconUrl)
+  weatherIcon.style.width
 
   var currentTemp = document.getElementById("temp1")
   currentTemp.textContent = data.main.temp;
@@ -115,7 +128,15 @@ function weatherDOM(data){
 
 }
 
-function forcastDOM(data){
+function forcastDOM(dayArray){
+  // day 2 of forecast
+  var day2Time = document.getElementById("day2")
+  day2Time.textContent = dayArray[0].clouds.dt_txt;
+  console.log(typeof (dayArray[0].clouds.dt_txt))
+
+  var day2Temp = document.getElementById("temp2")
+  day2Temp.textContent = dayArray[0].main.temp;
+
 
 }
 
