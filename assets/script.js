@@ -7,6 +7,9 @@ var historyArr = JSON.parse(localStorage.getItem("inputHistory")) || [];
 var weatherIcon = document.getElementById("weatherIcon");
 var userInput;
 
+const timeEl = document.querySelector(".time");
+const questPanel = document.getElementById("quesPanel");
+
 const now = new Date();
 const currentDateTime = now.toLocaleString();
 
@@ -16,6 +19,9 @@ console.log(currentDateTime); // output: "7/20/2021, 2:28:15 PM"
 function saveInput() {
   // Get user input
   userInput = document.getElementById("userInput").value;
+
+  document.getElementById("noShowCurrent").classList.remove("hidden");
+  document.getElementById("noShowForCast").classList.remove("hidden");
 
   if (userInput === "") {
     return;
@@ -31,6 +37,8 @@ function runData(y) {
   runCurrent(y);
   runForecast(y);
 }
+
+function Show() {}
 
 //fetch for current weather
 function runCurrent(x) {
@@ -65,6 +73,7 @@ function runForecast(a) {
       if (data.message === "city not found") {
         return;
       }
+      //makes array for forcast to pull data at 12:00
       console.log(data);
       let dayArray = [];
       let days = ["Day 1", "Day 2", "Day 3", "Day 4", "Day 5"];
@@ -91,7 +100,7 @@ function saveToStorage(city) {
 }
 
 // Function to update the history list
-function updateHistory() {
+function updateHistory(userInput) {
   var historyList = document.getElementById("historyList");
   historyList.innerHTML = "";
 
@@ -109,12 +118,13 @@ function weatherDOM(data, userInput, currentDateTime) {
 
   var iconcode = data.weather[0].icon;
   var iconUrl = "http://openweathermap.org/img/w/" + iconcode + ".png";
- 
+
   weatherIcon.setAttribute("src", iconUrl);
   weatherIcon.style.width;
 
   var currentstate = document.getElementById("state");
-  currentstate.textContent = userInput;
+  let result = userInput.toUpperCase();
+  currentstate.textContent = result;
 
   var currentTemp = document.getElementById("temp1");
   currentTemp.textContent = data.main.temp;
@@ -128,16 +138,14 @@ function weatherDOM(data, userInput, currentDateTime) {
 
 function forcastDOM(dayArray) {
   // day 2 of forecast
+  var day2Time = document.getElementById("day2");
+  day2Time.textContent = dayArray[0].clouds.dt_txt;
 
   var iconcode = dayArray[0].weather[0].icon;
   var iconUrl2 = "http://openweathermap.org/img/w/" + iconcode + ".png";
- 
+
   weatherIcon2.setAttribute("src", iconUrl2);
   weatherIcon2.style.width;
-  
-
-  var day2Time = document.getElementById("day2");
-  day2Time.textContent = dayArray[0].clouds.dt_txt;
 
   var day2Temp = document.getElementById("temp2");
   day2Temp.textContent = dayArray[0].main.temp;
@@ -152,7 +160,7 @@ function forcastDOM(dayArray) {
 
   var iconcode = dayArray[1].weather[0].icon;
   var iconUrl3 = "http://openweathermap.org/img/w/" + iconcode + ".png";
- 
+
   weatherIcon3.setAttribute("src", iconUrl3);
   weatherIcon3.style.width;
 
@@ -167,12 +175,12 @@ function forcastDOM(dayArray) {
 
   var day3Hum = document.getElementById("humidity3");
   day3Hum.textContent = dayArray[1].main.humidity;
-  
+
   //day 4
 
   var iconcode = dayArray[2].weather[0].icon;
   var iconUrl4 = "http://openweathermap.org/img/w/" + iconcode + ".png";
- 
+
   weatherIcon4.setAttribute("src", iconUrl4);
   weatherIcon4.style.width;
 
@@ -192,10 +200,10 @@ function forcastDOM(dayArray) {
 
   var iconcode = dayArray[3].weather[0].icon;
   var iconUrl5 = "http://openweathermap.org/img/w/" + iconcode + ".png";
- 
+
   weatherIcon5.setAttribute("src", iconUrl5);
   weatherIcon5.style.width;
-  
+
   var day5Time = document.getElementById("day5");
   day5Time.textContent = dayArray[3].clouds.dt_txt;
 
@@ -212,7 +220,7 @@ function forcastDOM(dayArray) {
 
   var iconcode = dayArray[4].weather[0].icon;
   var iconUrl6 = "http://openweathermap.org/img/w/" + iconcode + ".png";
- 
+
   weatherIcon6.setAttribute("src", iconUrl6);
   weatherIcon6.style.width;
 
