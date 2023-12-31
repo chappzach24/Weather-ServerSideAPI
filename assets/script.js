@@ -136,10 +136,17 @@ function weatherDOM(data, userInput, currentDateTime) {
   currentHum.textContent = data.main.humidity;
 }
 
+
+
 function forcastDOM(dayArray) {
   // day 2 of forecast
+
+  const timeDate = dayArray[0].dt_txt;
+  let newTimeDate = timeDate.split(' ')
+  console.log(newTimeDate);
+
   var day2Time = document.getElementById("day2");
-  day2Time.textContent = dayArray[0].clouds.dt_txt;
+  day2Time.textContent = newTimeDate[0];
 
   var iconcode = dayArray[0].weather[0].icon;
   var iconUrl2 = "http://openweathermap.org/img/w/" + iconcode + ".png";
@@ -158,14 +165,18 @@ function forcastDOM(dayArray) {
 
   // day 3
 
+  const timeDate3 = dayArray[1].dt_txt;
+  let newTimeDate3 = timeDate3.split(' ')
+  console.log(newTimeDate3);
+
+  var day2Time = document.getElementById("day3");
+  day2Time.textContent = newTimeDate3[0];
+
   var iconcode = dayArray[1].weather[0].icon;
   var iconUrl3 = "http://openweathermap.org/img/w/" + iconcode + ".png";
 
   weatherIcon3.setAttribute("src", iconUrl3);
   weatherIcon3.style.width;
-
-  var day3Time = document.getElementById("day3");
-  day3Time.textContent = dayArray[1].clouds.dt_txt;
 
   var day3Temp = document.getElementById("temp3");
   day3Temp.textContent = dayArray[1].main.temp;
@@ -177,15 +188,17 @@ function forcastDOM(dayArray) {
   day3Hum.textContent = dayArray[1].main.humidity;
 
   //day 4
+  const timeDate4 = dayArray[2].dt_txt;
+  let newTimeDate4 = timeDate4.split(' ');
+
+  var day2Time = document.getElementById("day4");
+  day2Time.textContent = newTimeDate4[0];
 
   var iconcode = dayArray[2].weather[0].icon;
   var iconUrl4 = "http://openweathermap.org/img/w/" + iconcode + ".png";
 
   weatherIcon4.setAttribute("src", iconUrl4);
   weatherIcon4.style.width;
-
-  var day4Time = document.getElementById("day4");
-  day4Time.textContent = dayArray[2].clouds.dt_txt;
 
   var day4Temp = document.getElementById("temp4");
   day4Temp.textContent = dayArray[2].main.temp;
@@ -198,14 +211,18 @@ function forcastDOM(dayArray) {
 
   //day 5
 
+  const timeDate5 = dayArray[3].dt_txt;
+  let newTimeDate5 = timeDate5.split(' ');
+
+  var day2Time = document.getElementById("day5");
+  day2Time.textContent = newTimeDate5[0];
+
   var iconcode = dayArray[3].weather[0].icon;
   var iconUrl5 = "http://openweathermap.org/img/w/" + iconcode + ".png";
 
   weatherIcon5.setAttribute("src", iconUrl5);
   weatherIcon5.style.width;
 
-  var day5Time = document.getElementById("day5");
-  day5Time.textContent = dayArray[3].clouds.dt_txt;
 
   var day5Temp = document.getElementById("temp5");
   day5Temp.textContent = dayArray[3].main.temp;
@@ -218,14 +235,17 @@ function forcastDOM(dayArray) {
 
   //day 6
 
+  const timeDate6 = dayArray[4].dt_txt;
+  let newTimeDate6 = timeDate6.split(' ');
+
+  var day2Time = document.getElementById("day6");
+  day2Time.textContent = newTimeDate6[0];
+
   var iconcode = dayArray[4].weather[0].icon;
   var iconUrl6 = "http://openweathermap.org/img/w/" + iconcode + ".png";
 
   weatherIcon6.setAttribute("src", iconUrl6);
   weatherIcon6.style.width;
-
-  var day6Time = document.getElementById("day6");
-  day6Time.textContent = dayArray[4].clouds.dt_txt;
 
   var day6Temp = document.getElementById("temp6");
   day6Temp.textContent = dayArray[4].main.temp;
