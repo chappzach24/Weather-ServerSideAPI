@@ -99,19 +99,40 @@ function saveToStorage(city) {
   updateHistory();
 }
 
-// Function to update the history list
-function updateHistory(userInput) {
+function updateHistory() {
   var historyList = document.getElementById("historyList");
   historyList.innerHTML = "";
 
-  // Display the history in the list
+  // Display the history as buttons in the list
   historyArr.forEach(function (item) {
+    var btn = document.createElement("button");
+    btn.textContent = item;
+    btn.addEventListener("click", function () {
+      runData(item);
+    });
+
+    //makes user input into a button
     var li = document.createElement("li");
-    li.textContent = item;
+    li.appendChild(btn);
     historyList.appendChild(li);
   });
 }
 
+
+// Function to update the history list
+// function updateHistory(userInput) {
+//   var historyList = document.getElementById("historyList");
+//   historyList.innerHTML = "";
+
+//   // Display the history in the list
+//   historyArr.forEach(function (item) {
+//     var li = document.createElement("li");
+//     li.textContent = item;
+//     historyList.appendChild(li);
+//   });
+// }
+
+//weather for current day
 function weatherDOM(data, userInput, currentDateTime) {
   var currentTime = document.getElementById("currentTime");
   currentTime.textContent = currentDateTime;
@@ -137,7 +158,7 @@ function weatherDOM(data, userInput, currentDateTime) {
 }
 
 
-
+//weather forcast for 5 days
 function forcastDOM(dayArray) {
   // day 2 of forecast
 
