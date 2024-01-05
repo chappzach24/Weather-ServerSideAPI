@@ -6,7 +6,7 @@ Certainly! The provided JavaScript code is for a weather application that utiliz
 
 To view project [Weather-ServerSideAPI](https://chappzach24.github.io/Weather-ServerSideAPI/)
 
-![alt text]([https://github.com/chappzach24/WorkDayScheduler/blob/main/work-day.png](https://github.com/chappzach24/Weather-ServerSideAPI/blob/main/weather-forcast.png))
+![alt text](https://github.com/chappzach24/Weather-ServerSideAPI/blob/main/assets/Photos/weather-forcast.png)
 
 To set up and run this project in your development environment, follow these step-by-step instructions:
 
