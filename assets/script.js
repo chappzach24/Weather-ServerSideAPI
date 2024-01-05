@@ -1,5 +1,5 @@
 var api = "https://api.openweathermap.org/data/2.5/";
-var APIKey = "&appid=bb3db924a5328b1a5ee83d1241a27223";
+var APIKey = "Add  API KEY HERE";
 var units = "&units=imperial";
 var historyArr = JSON.parse(localStorage.getItem("inputHistory")) || [];
 var weatherIcon = document.getElementById("weatherIcon");

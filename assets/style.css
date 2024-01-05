@@ -4,13 +4,13 @@
 }
 
 body {
-  font-family: Arial, sans-serif;
   margin: 20px;
   background-color: #a5a5b1;
 }
 
 html, body{
   height: 100%;
+  font-family: 'Roboto', sans-serif;
 }
 
 header{
