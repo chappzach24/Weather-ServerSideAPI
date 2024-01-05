@@ -6,7 +6,7 @@ The application allows users to input a city name, retrieves and displays the cu
 
 To view project [Weather-ServerSideAPI](https://chappzach24.github.io/Weather-ServerSideAPI/)
 
-![alt text](https://github.com/chappzach24/Weather-ServerSideAPI/blob/main/assets/Photos/weather-forcast.png)
+![alt text](https://github.com/chappzach24/Weather-ServerSideAPI/blob/main/assets/Photos/weatherapi.png)
 
 To set up and run this project in your development environment, follow these step-by-step instructions:
 
