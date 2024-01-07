@@ -33,7 +33,6 @@ function Show() {}
 //fetch for current weather
 function runCurrent(city) {
   var url = api + "weather?q=" + city + APIKey + units;
-  console.log(url);
 
   fetch(url)
     .then(function (response) {
